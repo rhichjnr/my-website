@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITNESS ZONE</title>
+    
+    <!-- External CSS Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Tailwind Configuration -->
+    <script src="assets/js/config.js"></script>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full bg-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-dumbbell text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-primary">FITNESS ZONE</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <button onclick="showPage('home')" class="nav-link text-gray-700 hover:text-primary font-medium">Home</button>
+                    <button onclick="showPage('about')" class="nav-link text-gray-700 hover:text-primary font-medium">About</button>
+                    <button onclick="showPage('services')" class="nav-link text-gray-700 hover:text-primary font-medium">Services</button>
+                    <button onclick="showPage('membership')" class="nav-link text-gray-700 hover:text-primary font-medium">Membership</button>
+                    <button onclick="showPage('gallery')" class="nav-link text-gray-700 hover:text-primary font-medium">Gallery</button>
+                    <button onclick="showPage('contact')" class="nav-link text-gray-700 hover:text-primary font-medium">Contact</button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <button onclick="showPage('home')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Home</button>
+                <button onclick="showPage('about')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">About</button>
+                <button onclick="showPage('services')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Services</button>
+                <button onclick="showPage('membership')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Membership</button>
+                <button onclick="showPage('gallery')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Gallery</button>
+                <button onclick="showPage('contact')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary">Contact</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div id="main-content" class="pt-16">
+        <!-- Home Page -->
+        <section id="home" class="page hidden">
+            <!-- Hero Section -->
+            <div class="relative min-h-screen flex items-center overflow-hidden">
+                <!-- Slider Background -->
+                <div id="hero-slider" class="absolute inset-0 z-0">
+                    <div class="slider-img absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920');"></div>
+                    <div class="slider-img absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1920');"></div>
+                    <div class="slider-img absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1920');"></div>
+                </div>
+
+                <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+                    <div class="text-center">
+                        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                            Transform Your Body, Transform Your Life
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
+                            Welcome to FITNESS ZONE - Your journey to a healthier, stronger you starts here
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center gap-4">
+                            <button onclick="showPage('membership')" class="bg-secondary hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                                Get Started Today
+                            </button>
+                            <button onclick="showPage('services')" class="bg-transparent border-2 border-red-600 text-red-600 hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-full transition duration-300">
+                                View Our Services
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-primary mb-4">Why Choose FITNESS ZONE?</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto">We provide everything you need to achieve your fitness goals in a supportive environment.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="feature-card bg-white p-8 rounded-xl shadow-md text-center">
+                            <i class="fas fa-dumbbell text-5xl text-primary mb-6"></i>
+                            <h3 class="text-xl font-bold mb-4">Modern Equipment</h3>
+                            <p class="text-gray-600">State-of-the-art fitness equipment designed to maximize your workout efficiency and safety.</p>
+                        </div>
+                        <div class="feature-card bg-white p-8 rounded-xl shadow-md text-center">
+                            <i class="fas fa-users text-5xl text-primary mb-6"></i>
+                            <h3 class="text-xl font-bold mb-4">Expert Trainers</h3>
+                            <p class="text-gray-600">Certified trainers who will guide you through every step of your fitness journey.</p>
+                        </div>
+                        <div class="feature-card bg-white p-8 rounded-xl shadow-md text-center">
+                            <i class="fas fa-map-marker-alt text-5xl text-primary mb-6"></i>
+                            <h3 class="text-xl font-bold mb-4">Prime Location</h3>
+                            <p class="text-gray-600">Conveniently located in Obuasi for easy access to our world-class fitness facility.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="py-16 bg-primary text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <div class="text-4xl font-bold mb-2">200+</div>
+                            <div class="text-gray-200">Happy Members</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold mb-2">10+</div>
+                            <div class="text-gray-200">Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold mb-2">15+</div>
+                            <div class="text-gray-200">Trainers</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold mb-2">99.8%</div>
+                            <div class="text-gray-200">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trainers Section -->
+            <div class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-primary mb-4">Meet Our Expert Trainers</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto">Our certified professionals are dedicated to helping you reach your peak performance.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                            <img src="assets/images/image11.jpg" alt="Trainer" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold text-dark">RHICH JNR</h3>
+                                <p class="text-primary font-medium mb-4">Strength & Conditioning</p>
+                                <div class="flex justify-center space-x-3 text-gray-400">
+                                    <a href="#" class="hover:text-primary"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="hover:text-primary"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                            <img src="assets/images/image10.jpg" alt="Trainer" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold text-dark">SYLVESTER ABEKAH</h3>
+                                <p class="text-primary font-medium mb-4">Yoga & Flexibility</p>
+                                <div class="flex justify-center space-x-3 text-gray-400">
+                                    <a href="#" class="hover:text-primary"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="hover:text-primary"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                            <img src="assets/images/image9.jpg" alt="Trainer" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold text-dark">ROBERT ESHUN</h3>
+                                <p class="text-primary font-medium mb-4">Bodybuilding Expert</p>
+                                <div class="flex justify-center space-x-3 text-gray-400">
+                                    <a href="#" class="hover:text-primary"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="hover:text-primary"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials Section -->
+            <div class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-primary mb-4">Member Success Stories</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto">Hear from those who have transformed their lives at FITNESS ZONE.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 italic relative">
+                            <i class="fas fa-quote-left text-primary opacity-20 text-4xl absolute top-4 left-4"></i>
+                            <p class="text-gray-600 mb-6 relative z-10">"Joining FITNESS ZONE was the best decision I made for my health. The trainers are supportive and the community is incredible!"</p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
+                                    <img src="assets/images/image11.jpg" alt="User">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark text-sm">Albertha Otoo</h4>
+                                    <p class="text-gray-400 text-xs">Member since 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 italic relative">
+                            <i class="fas fa-quote-left text-primary opacity-20 text-4xl absolute top-4 left-4"></i>
+                            <p class="text-gray-600 mb-6 relative z-10">"The facilities are top-notch and always clean. I've seen amazing results in just 6 months. Highly recommend the elite plan!"</p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
+                                    <img src="assets/images/image10.jpg" alt="User">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark text-sm">Frank Ackah</h4>
+                                    <p class="text-gray-400 text-xs">Member since 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 italic relative">
+                            <i class="fas fa-quote-left text-primary opacity-20 text-4xl absolute top-4 left-4"></i>
+                            <p class="text-gray-600 mb-6 relative z-10">"As a beginner, I was nervous, but the personal training sessions here made me feel confident and strong. The atmosphere is so welcoming."</p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
+                                    <img src="assets/images/image9.jpg" alt="User">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark text-sm">Rebecca Addai</h4>
+                                    <p class="text-gray-400 text-xs">Member since 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page hidden py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-primary mb-4">About FITNESS ZONE</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Learn more about our journey and what makes us different from other gyms</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
+                    <div class="md:w-1/2">
+                        <img src="assets/images/image10.jpg" width='600' height='400'>
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-6">Our Story</h3>
+                        <p class="text-gray-600 mb-6">
+                            Founded in Obuasi, FITNESS ZONE has been serving the local community for over two decades. 
+                            Our mission is to empower individuals to achieve their health and fitness goals through personalized 
+                            training programs, state-of-the-art equipment, and a supportive community atmosphere.
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            What sets us apart is our commitment to providing individualized attention to each member, 
+                            ensuring that everyone receives the support they need to succeed. We believe that fitness 
+                            should be accessible to everyone, regardless of their experience level.
+                        </p>
+                        <button onclick="showPage('membership')" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                            Join Our Community
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Our Values</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                            <i class="fas fa-heart text-4xl text-primary mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">Community</h4>
+                            <p class="text-gray-600">Building a supportive environment where members encourage and motivate each other</p>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                            <i class="fas fa-bolt text-4xl text-primary mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">Excellence</h4>
+                            <p class="text-gray-600">Providing top-tier facilities, equipment, and services to exceed expectations</p>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                            <i class="fas fa-trophy text-4xl text-primary mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">Results</h4>
+                            <p class="text-gray-600">Focusing on measurable outcomes and helping members achieve their goals</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Page -->
+        <section id="services" class="page hidden py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Our Services</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive fitness solutions tailored to meet your specific needs and goals</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-dumbbell text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Personal Training</h3>
+                        <p class="text-gray-600 mb-6">
+                            One-on-one sessions with certified trainers to develop a personalized workout plan 
+                            tailored to your fitness level, goals, and preferences.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Customized workout plans
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Nutrition guidance
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Progress tracking and feedback
+                            </li>
+                        </ul>
+                        <button onclick="showPage('membership')" class="text-primary font-medium hover:text-blue-800">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-users text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Group Classes</h3>
+                        <p class="text-gray-600 mb-6">
+                            Engage in fun group fitness classes led by experienced instructors. 
+                            From cardio to strength training, we offer something for everyone.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Variety of class options
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Motivational environment
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Social interaction
+                            </li>
+                        </ul>
+                        <button onclick="showPage('membership')" class="text-primary font-medium hover:text-blue-800">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-heartbeat text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Wellness Programs</h3>
+                        <p class="text-gray-600 mb-6">
+                            Comprehensive wellness packages that combine fitness, nutrition, and lifestyle coaching 
+                            to promote overall health and well-being.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Holistic approach to health
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Long-term lifestyle changes
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Continuous support
+                            </li>
+                        </ul>
+                        <button onclick="showPage('membership')" class="text-primary font-medium hover:text-blue-800">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-primary text-white rounded-xl p-8 md:p-12">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6">Want to know more about our services?</h3>
+                        <p class="text-gray-200 mb-8 max-w-2xl mx-auto">
+                            Our team of experts is ready to discuss how our services can help you reach your fitness goals. 
+                            Schedule a free consultation today.
+                        </p>
+                        <button onclick="showPage('contact')" class="bg-secondary hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                            Contact Us Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Membership Page -->
+        <section id="membership" class="page hidden py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Membership Plans</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Choose the perfect plan that fits your lifestyle and fitness goals</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                        <div class="bg-gray-100 p-6 text-center">
+                            <h3 class="text-xl font-bold mb-2">Basic Plan</h3>
+                            <div class="text-3xl font-bold text-primary mb-4">GH₵100</div>
+                            <p class="text-gray-600">per month</p>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Access to gym facilities</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Locker room access</span>
+                                </li>
+                                <li class="flex items-center text-gray-400">
+                                    <i class="fas fa-times-circle mr-2"></i>
+                                    <span>Personal training</span>
+                                </li>
+                                <li class="flex items-center text-gray-400">
+                                    <i class="fas fa-times-circle mr-2"></i>
+                                    <span>Group classes</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-gray-200 text-gray-800 py-3 rounded-lg font-medium hover:bg-gray-300 transition duration-300">
+                                Select Plan
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 border-2 border-primary">
+                        <div class="bg-primary text-white p-6 text-center">
+                            <h3 class="text-xl font-bold mb-2">Premium Plan</h3>
+                            <div class="text-3xl font-bold mb-4">GH₵150</div>
+                            <p class="text-gray-200">per month</p>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>All Basic features</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Personal training (1 session/month)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Group classes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Nutrition guidance</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-blue-800 transition duration-300">
+                                Select Plan
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                        <div class="bg-gray-100 p-6 text-center">
+                            <h3 class="text-xl font-bold mb-2">Elite Plan</h3>
+                            <div class="text-3xl font-bold text-primary mb-4">GH₵200</div>
+                            <p class="text-gray-600">per month</p>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>All Premium features</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Personal training (3 sessions/month)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Unlimited group classes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Monthly wellness checkups</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-gray-200 text-gray-800 py-3 rounded-lg font-medium hover:bg-gray-300 transition duration-300">
+                                Select Plan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Why Become a Member?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">Flexible Payment Options</h4>
+                            <p class="text-gray-600 mb-4">
+                                Pay monthly or annual membership fees with various payment methods including cash, mobile money, 
+                                and bank transfers for your convenience.
+                            </p>
+                            <h4 class="text-lg font-semibold mb-4">Free Trial Period</h4>
+                            <p class="text-gray-600">
+                                New members can try out our facilities for 7 days absolutely free to ensure it's the right fit for you.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4">Exclusive Benefits</h4>
+                            <p class="text-gray-600 mb-4">
+                                Members receive exclusive discounts on personal training sessions, special events, 
+                                and merchandise available only to our members.
+                            </p>
+                            <h4 class="text-lg font-semibold mb-4">Supportive Community</h4>
+                            <p class="text-gray-600">
+                                Join a community of like-minded individuals committed to fitness and healthy living, 
+                                creating a motivating and inspiring environment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Page -->
+        <section id="gallery" class="page hidden py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Gym Gallery</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Take a look at our modern facilities and what makes Obuasi Fitness special</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                    <div class="gallery-item">
+                        <img src="assets/images/image6.jpg" alt="Gym Interior" class="w-full h-64 object-cover rounded-xl shadow-md">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/image7.jpg" alt="Equipment" class="w-full h-64 object-cover rounded-xl shadow-md">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/image8.jpg" alt="Training Session" class="w-full h-64 object-cover rounded-xl shadow-md">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/image9.jpg" alt="Locker Room" class="w-full h-64 object-cover rounded-xl shadow-md">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/image10.jpg" alt="Group Class" class="w-full h-64 object-cover rounded-xl shadow-md">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/image11.jpg" alt="Training Equipment" class="w-full h-64 object-cover rounded-xl shadow-md">
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button onclick="showPage('contact')" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                        Contact Us for More Photos
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page hidden py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Get In Touch</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Have questions? Our team is here to help you achieve your fitness goals</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Location</h4>
+                                    <p class="text-gray-600">Obuasi, close to the Bogobiri market<br>Obuasi Ashanti</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Phone</h4>
+                                    <p class="text-gray-600">+233596233279<br>+233595860869</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Email</h4>
+                                    <p class="text-gray-600">otoobaidooignatious@gmail.com<br>rhichjnr@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Working Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 5:00 AM - 10:00 PM<br>Saturday - Sunday: 6:00 AM - 8:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-100 p-6 rounded-xl">
+                            <h4 class="font-bold text-lg mb-4">Find Us On Social Media</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition duration-300">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                            <form id="contact-form" class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">First Name</label>
+                                        <input type="text" id="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Last Name</label>
+                                        <input type="text" id="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Email Address</label>
+                                    <input type="email" id="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Subject</label>
+                                    <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Message</label>
+                                    <textarea id="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-dumbbell text-secondary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">FITNESS ZONE</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Empowering lives through fitness since 2018. Serving the Obuasi community with top-quality fitness solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><button onclick="showPage('home')" class="text-gray-400 hover:text-secondary transition duration-300">Home</button></li>
+                        <li><button onclick="showPage('about')" class="text-gray-400 hover:text-secondary transition duration-300">About Us</button></li>
+                        <li><button onclick="showPage('services')" class="text-gray-400 hover:text-secondary transition duration-300">Services</button></li>
+                        <li><button onclick="showPage('membership')" class="text-gray-400 hover:text-secondary transition duration-300">Membership</button></li>
+                        <li><button onclick="showPage('contact')" class="text-gray-400 hover:text-secondary transition duration-300">Contact</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Personal Training</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Group Classes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Wellness Programs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Nutrition Coaching</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-secondary transition duration-300">Fitness Assessments</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for fitness tips and updates.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                        <button class="bg-secondary hover:bg-yellow-600 text-white px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2018 FITNESS ZONE. All rights reserved. | Built for Obuasi Community | Developed by RHICH JNR</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Application Logic -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
